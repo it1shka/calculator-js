@@ -4,9 +4,10 @@ import Keyboard from './Keyboard'
 function calc(expr) {
   try {
     const value = eval(expr.replace(/×/g, '*').replace(/÷/g, '/'))
+    if(Number.isNaN(value)) return 0
     return value
   } catch {
-    return null
+    return 0
   }
 }
 
